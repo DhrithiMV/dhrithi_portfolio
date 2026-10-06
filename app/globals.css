@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark theme (default) — AI engineering workstation */
+  --c-base: 17 17 22; /* #111116 */
+  --c-base-panel: 24 24 34; /* #181822 */
+  --c-base-panel2: 24 24 34; /* #181822 */
+  --c-base-border: 41 41 54; /* #292936 */
+  --c-ink: 252 252 252; /* #FCFCFC */
+  --c-ink-muted: 158 156 167; /* #9E9CA7 */
+  --c-ink-faint: 158 156 167; /* #9E9CA7 */
+  --c-model: 236 161 166; /* #ECA1A6 */
+  --c-model-dim: 41 41 54; /* #292936 */
+  --c-model-bright: 245 204 207; /* Lighter Pink */
+  --c-data: 245 166 35;
+  --c-data-dim: 45 32 15;
+  --c-data-bright: 255 198 112;
+  --grid-line: 41 41 54; /* #292936 */
+  --grid-opacity: 0.3;
+  --hero-glow: rgba(236, 161, 166, 0.05);
+}
+
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-base text-ink font-body antialiased transition-colors duration-300;
+}
+
+::selection {
+  background: rgb(var(--c-model) / 0.35);
+  color: inherit;
+}
+
+/* Utility: dotted engineering grid backdrop */
+.bg-engineering-grid {
+  background-image: linear-gradient(to right, rgb(var(--grid-line) / var(--grid-opacity)) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--grid-line) / var(--grid-opacity)) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Signature: pipeline edge animation used across dividers/hero */
+.pipeline-edge {
+  stroke-dasharray: 6 6;
+  animation: pulse-line 2.5s linear infinite;
+}
+
+@keyframes pulse-line {
+  0% {
+    stroke-dashoffset: 12;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus ring, on brand */
+:focus-visible {
+  outline: 2px solid rgb(var(--c-model));
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.section-eyebrow {
+  @apply font-mono text-[11px] lg:text-[12px] tracking-[0.2em] uppercase text-model;
+}
+
+.card-hover {
+  @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:border-model/50 hover:shadow-[0_0_15px_-3px_rgba(236,161,166,0.15)];
+}
+
+
+
+.reveal {
+  opacity: 0;
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
