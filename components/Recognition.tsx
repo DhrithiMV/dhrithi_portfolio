@@ -4,7 +4,6 @@ import Reveal from "@/components/Reveal";
 import { motion } from "framer-motion";
 import { 
   Trophy, 
-  Medal, 
   Sparkles, 
   Cloud, 
   ShieldCheck, 
@@ -17,11 +16,6 @@ const CREDENTIALS = [
     title: "Pitch Premier 1st Prize",
     issuer: "TechKriti 2024",
     Icon: Trophy,
-  },
-  {
-    title: "Robo Soccer 2nd Place",
-    issuer: "Gyanith 2024",
-    Icon: Medal,
   },
   {
     title: "Recognized Innovator",
