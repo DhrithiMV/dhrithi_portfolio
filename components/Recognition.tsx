@@ -3,7 +3,6 @@
 import Reveal from "@/components/Reveal";
 import { motion } from "framer-motion";
 import { 
-  Trophy, 
   Sparkles, 
   Cloud, 
   ShieldCheck, 
@@ -12,11 +11,6 @@ import {
 } from "lucide-react";
 
 const CREDENTIALS = [
-  {
-    title: "Pitch Premier 1st Prize",
-    issuer: "TechKriti 2024",
-    Icon: Trophy,
-  },
   {
     title: "Recognized Innovator",
     issuer: "IIC Regional Meet 2025",
